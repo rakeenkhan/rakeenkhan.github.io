@@ -11,12 +11,18 @@ body {
     text-align: center;
 }
 
+
+
+body { background-color: antiquewhite; }
+
 h1 {
     font-size: var(--fs-xxxl);
     line-height: 1.2;
     text-align: center;
     font-weight: normal;
     letter-spacing: -3px;
+    color: brown;
+
 }
 
 h2 {
@@ -26,6 +32,8 @@ h2 {
     margin-bottom: 16px;
     font-weight: normal;
     letter-spacing: 2px;
+    color: rgb(58, 27, 27);
+
 }
 
 h3 {
@@ -34,6 +42,8 @@ h3 {
     margin-bottom: 24px;
     line-height: 1.2;
     text-transform: uppercase;
+    color: rgb(200, 250, 0);
+
 }
 
 p {
