@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My Website</title>
+    <title>My Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header,
+        section {
+            padding-top: 2rem;
+            padding-right: 9%;
+            padding-bottom: 42px;
+            padding-left: 9%;
+        }
+
+        @media (min-width: 768px) {
+            header,
+            section {
+                padding-top: 3%;
+                padding-right: 20%;
+                padding-bottom: 3%;
+                padding-left: 20%;
+            }
+        }
+
+        section h2 {
+            margin-top: 2rem;
+        }
+
+        section h3 {
+            margin-top: 1.5rem;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <h1> My Website </h1>
-    <p> Hello My Name is John Doe</p>
-    <p> This Website Was Created to showcase some of my recent web design work.</p>
-    <p><a href="exercises/page-1.html"> A Tale of Two Cities </a></p>
-    <p><a href="exercises/page-2.html">Purple Rain</a></p>  
-    
+    <header>
+        <h1 class="text-4xl font-bold">My Website</h1>
+    </header>
 
+    <section>
+        <p>Hello, my name is John Doe.</p>
+        <p>This website was created to showcase some of my recent web design work.</p>
+        <p><a href="exercises/page-1.html">A Tale of Two Cities</a></p>
+        <p><a href="exercises/page-2.html">Purple Rain</a></p>
+    </section>
 </body>
 </html>

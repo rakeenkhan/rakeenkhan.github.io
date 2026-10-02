@@ -5,22 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purple Rain</title>
     <meta name="description" content="A basic web page containing some text from Wikipedia about the 1983-recorded song Purple Rain by Prince">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header,
+        section {
+            padding-top: 2rem;
+            padding-right: 9%;
+            padding-bottom: 42px;
+            padding-left: 9%;
+        }
+
+        @media (min-width: 768px) {
+            header,
+            section {
+                padding-top: 3%;
+                padding-right: 20%;
+                padding-bottom: 3%;
+                padding-left: 20%;
+            }
+        }
+
+        section h2 {
+            margin-top: 2rem;
+        }
+
+        section h3 {
+            margin-top: 1.5rem;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Purple Rain</h1>
-    <h2>Introduction</h2>
-    <p><em>Purple Rain</em> is a song by American musician Prince and his backing band The Revolution. It is the title track from the 1984 album of the same name, which in turn is the soundtrack album for the 1984 film of the same name.</p>
+    <header>
+        <h1 class="text-4xl font-bold">Purple Rain</h1>
+    </header>
 
-    <h2>Origins</h2>
-    <p>Originally written as a country song and intended to be a collaboration with Stevie Nicks, Prince explained the meaning of the song as follows: <em>"When there's blood in the sky... red and blue = purple. Purple rain pertains to the end of the world and being with the one you love and letting your faith/god guide you through the purple rain."</em></p>
+    <section>
+        <h2>Introduction</h2>
+        <p><em>Purple Rain</em> is a song by American musician Prince and his backing band The Revolution. It is the title track from the 1984 album of the same name, which in turn is the soundtrack album for the 1984 film of the same name.</p>
 
-    <h2>Recording</h2>
-    <p>The song was recorded during a benefit concert for the Minnesota Dance Theatre at the First Avenue nightclub in Minneapolis on August 3, 1983. <em>City Pages</em> described the 70-minute performance as Prince's "sweatiest and most soulful hometown concert yet."</p>
+        <h2>Origins</h2>
+        <p>Originally written as a country song and intended to be a collaboration with Stevie Nicks, Prince explained the meaning of the song as follows: <em>"When there's blood in the sky... red and blue = purple. Purple rain pertains to the end of the world and being with the one you love and letting your faith/god guide you through the purple rain."</em></p>
 
-    <h2>Reception and legacy</h2>
-    <p>The song ranked number 144 on the Rolling Stone list of the 500 Greatest Songs of All Time. Q magazine placed it at number 40 in its list of the 100 Greatest Guitar Tracks, and Pitchfork named it the best song of the 1980s. The song is also included in The Rock and Roll Hall of Fame's 500 Songs that Shaped Rock and Roll.</p>
+        <h2>Recording</h2>
+        <p>The song was recorded during a benefit concert for the Minnesota Dance Theatre at the First Avenue nightclub in Minneapolis on August 3, 1983. <em>City Pages</em> described the 70-minute performance as Prince's "sweatiest and most soulful hometown concert yet."</p>
 
-    <p><strong>Source</strong>: <em>Wikipedia</em>.</p>
-    <p><a href="https://www.munnelly.com/dorset/lessons/assets/index.html">Back to Home page</a></p>
+        <h2>Reception and legacy</h2>
+        <p>The song ranked number 144 on the Rolling Stone list of the 500 Greatest Songs of All Time. Q magazine placed it at number 40 in its list of the 100 Greatest Guitar Tracks, and Pitchfork named it the best song of the 1980s. The song is also included in The Rock and Roll Hall of Fame's 500 Songs that Shaped Rock and Roll.</p>
+
+        <p><strong>Source</strong>: <em>Wikipedia</em>.</p>
+        <p><a href="../index.html">Back to Home page</a></p>
+    </section>
 </body>
 </html>

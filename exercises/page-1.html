@@ -1,24 +1,69 @@
 <!DOCTYPE html>
-<title> A Tale of Two Cities</title>
-<meta name="description" content="A basic web page containing some text from A Tale of Two Cities, a novel published in 1859 by English author Charles Dickens.">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tale of Two Cities</title>
+    <meta name="description" content="A basic web page containing some text from A Tale of Two Cities, a novel published in 1859 by English author Charles Dickens.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header,
+        section {
+            padding-top: 2rem;
+            padding-right: 9%;
+            padding-bottom: 42px;
+            padding-left: 9%;
+        }
+
+        @media (min-width: 768px) {
+            header,
+            section {
+                padding-top: 3%;
+                padding-right: 20%;
+                padding-bottom: 3%;
+                padding-left: 20%;
+            }
+        }
+
+        section h2 {
+            margin-top: 2rem;
+        }
+
+        section h3 {
+            margin-top: 1.5rem;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
 <body>
-     <h1> A Tale of Two Cities </h1>
-    
+    <header>
+        <h1 class="text-4xl font-bold">A Tale of Two Cities</h1>
+    </header>
 
-<p>  It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.</p>
+    <section>
+        <p>It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.</p>
 
-<p>We had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way - in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.</p>
+        <p>We had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way - in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.</p>
 
-<h2> Heading </h2>
-<p>There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France. In both countries it was clearer than crystal to the lords of the State preserves of loaves and fishes, that things in general were settled for ever.</p>
+        <h2>Heading</h2>
+        <p>There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France. In both countries it was clearer than crystal to the lords of the State preserves of loaves and fishes, that things in general were settled for ever.</p>
 
-<h2> Small Heading </h2>
-<p>All these things, and a thousand like them, came to pass in and close upon the dear old year one thousand seven hundred and seventy-five. Environed by them, while the Woodman and the Farmer worked unheeded, those two of the large jaws, and those other two of the plain and the fair faces, trod with stir enough, and carried their divine rights with a high hand.</p>
+        <h2>Small Heading</h2>
+        <p>All these things, and a thousand like them, came to pass in and close upon the dear old year one thousand seven hundred and seventy-five. Environed by them, while the Woodman and the Farmer worked unheeded, those two of the large jaws, and those other two of the plain and the fair faces, trod with stir enough, and carried their divine rights with a high hand.</p>
 
-<h3> Smaller Heading </h3>
-<p>A wonderful fact to reflect upon, that every human creature is constituted to be that profound secret and mystery to every other. A solemn consideration, when I enter a great city by night, that every one of those darkly clustered houses encloses its own secret; that every room in every one of them encloses its own secret; that every beating heart in the hundreds of thousands of breasts there, is, in some of its imaginings, a secret to the heart nearest it!</p>
+        <h3>Smaller Heading</h3>
+        <p>A wonderful fact to reflect upon, that every human creature is constituted to be that profound secret and mystery to every other. A solemn consideration, when I enter a great city by night, that every one of those darkly clustered houses encloses its own secret; that every room in every one of them encloses its own secret; that every beating heart in the hundreds of thousands of breasts there, is, in some of its imaginings, a secret to the heart nearest it!</p>
 
-<p>by <i>Charles Dickens</i>, published by <b>Chapman and Hall</b> in 1859.</p>
-<p> <a href="../index.html"> Back to Home Page </a></p>
+        <p>by <i>Charles Dickens</i>, published by <b>Chapman and Hall</b> in 1859.</p>
+        <p><a href="../index.html">Back to Home Page</a></p>
+    </section>
 </body>
 </html>
