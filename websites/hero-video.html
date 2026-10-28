@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Rakeen Khan 78953 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Block with Video</title>
+    <meta name="description"
+          content="A hero block with a background video that plays in a continuous loop and includes a tinted overlay.">
+    
+    <link rel="preload" href="assets/video/hero-still.mp4" as="video">
+
+    <!-- Link to Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom styles -->
+    <style type="text/tailwindcss">
+
+        header::before {
+            content: "";
+            @apply absolute inset-0 bg-black/55;
+        }
+
+        header {
+    @apply bg-center md:bg-top;
+}
+
+header {
+    @apply relative
+           min-h-screen min-h-[100svh]
+           flex flex-col justify-center
+           px-8 lg:px-60 py-12
+           text-center
+           overflow-hidden;
+}
+
+header video {
+    @apply absolute inset-0
+           w-full h-full
+           object-cover
+           object-center md:object-top;
+}
+
+        header h1 {
+    @apply text-7xl md:text-8xl
+        text-white font-bold
+        tracking-tight
+        mb-6;
+}
+
+        header h2 {
+            @apply text-4xl md:text-5xl
+            text-white;
+        }
+
+header h1,
+header h2 { @apply text-shadow-lg/50; }
+
+header h1,
+header h2,
+header p {
+    @apply relative z-10;
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- hero block -->
+     <header>
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="assets/videos/hero-still.jpg">
+
+        <source
+            src="assets/videos/hero-video.mp4"
+            type="video/mp4">
+    </video>
+
+    <h1>Education for Life</h1>
+
+    <h2>A brighter career and future</h2>
+
+    <p><a href="index.html">Back to Home page</a></p>
+
+    
+
+</header>
+    <!-- /hero block -->
+
+</body>
+</html>

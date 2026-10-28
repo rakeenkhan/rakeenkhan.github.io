@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Rakeen Khan 78953 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Block with Image</title>
+    <meta name="description" content="A hero block with a background image and a tinted overlay.">
+    <link rel="preload" href="assets/img/business.jpg" as="image">
+
+    <!-- Link to Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom styles -->
+    <style type="text/tailwindcss">
+
+@keyframes slide-in-top {
+    0% {
+       transform: translateY(-1000px);
+       opacity: 0;
+    }
+    100% {
+       transform: translateY(0);
+       opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+       transform: translateX(-1000px);
+       opacity: 0;
+    }
+    100% {
+       transform: translateX(0);
+       opacity: 1;
+    }
+}
+
+.slide-in-top {
+    animation: slide-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+    header::before {
+    content: "";
+    @apply absolute inset-0
+           bg-linear-to-b
+           from-blue-950/70
+           to-pink-900/30;
+}
+
+        header {
+    @apply bg-center md:bg-top;
+}
+
+header {
+@apply relative
+    min-h-screen min-h-[100svh]
+    bg-[url('assets/img/business.jpg')] bg-cover bg-center
+    flex flex-col justify-center
+    px-8 lg:px-60 py-12
+    text-center;
+}
+
+        header h1 {
+    @apply text-7xl md:text-8xl
+        text-white font-bold
+        tracking-tight
+        mb-6;
+}
+
+        header h2 {
+            @apply text-4xl md:text-5xl
+            text-white;
+        }
+
+header h1,
+header h2 { @apply text-shadow-lg/50; }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- hero block -->
+     <header>
+        <h1 class="slide-in-top">Rakeen Khan</h1>
+
+        <h2 class="slide-in-left">Creative Web Developer</h2>
+
+        <p><a href="index.html" class="slide-in-left">Back to Home page</a></p>
+    </header>
+    <!-- /hero block -->
+
+    <p><a href="index.html">Back to Home page</a></p>
+
+</body>
+</html>
