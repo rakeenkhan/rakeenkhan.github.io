@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakeen Khan | Portfolio | Sample Hero Block Layout 2</title>
+    <meta name="description" content="Gallery of hero block layouts.">
+
+    <!-- Preload the hero image so it appears as soon as possible -->
+    <link rel="preload" as="image" href="assets/img/analytics.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+
+        /* Paste CSS styles here */
+/* ===== Hero (split) ===== */
+/* ===== Hero (split) ===== */
+
+@layer components {
+
+    .hero {
+        @apply flex w-full items-center justify-center px-6 py-16 md:px-12 md:py-20;
+    }
+
+    /* Two columns from lg (1024px): text and image side by side,
+       vertically centred. Below lg they stack, text first. */
+    .hero-split-grid {
+        @apply mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16;
+    }
+
+    .hero-content {
+        @apply w-full min-w-0;
+    }
+
+    /* "Image on left": add hero-split-reverse to the header */
+    .hero-split-reverse .hero-split-media {
+        @apply lg:order-first;
+    }
+
+    /* Image: fills its column at its natural 4:3 shape */
+    .hero-split-image {
+        @apply block h-auto w-full;
+    }
+
+    /* "Image fills column": add hero-split-fill to the header. The image
+       runs edge to edge and is cropped to fit (object-cover); the text
+       keeps its padding. On phones the image sits on top at 4:3. */
+    .hero-split-fill {
+        @apply items-stretch p-0 md:p-0;
+    }
+
+    .hero-split-fill .hero-split-grid {
+        @apply max-w-none items-stretch gap-0 lg:gap-0;
+    }
+
+    .hero-split-fill .hero-content {
+        @apply max-w-xl self-center justify-self-center px-6 py-16 md:px-12 md:py-20 lg:px-16;
+    }
+
+    .hero-split-fill .hero-split-media {
+        @apply relative aspect-[4/3] max-lg:order-first lg:aspect-auto;
+    }
+
+    .hero-split-fill .hero-split-image {
+        @apply absolute inset-0 h-full w-full object-cover;
+    }
+
+    .hero-min-height {
+        @apply min-h-[480px] md:min-h-[85vh];
+    }
+
+    .hero h1 {
+        @apply font-sans text-4xl font-normal leading-[1.15] tracking-tight md:text-5xl xl:text-6xl;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    .hero h2 {
+        @apply mt-6 font-sans text-lg font-normal leading-normal md:text-xl;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    /* Badge: a short label above the H1. Its shape and colours
+       are classes in the HTML. */
+    .hero-badge {
+        @apply mb-6 inline-block px-3 py-1.5 text-sm font-normal;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    /* Buttons: links styled as buttons */
+    .hero-buttons {
+        @apply mt-10 flex flex-wrap gap-4 md:gap-x-6;
+    }
+
+    .hero-button {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-transparent px-7 py-3 text-base font-semibold no-underline transition-colors duration-200 focus-visible:outline-offset-4;
+    }
+
+    .hero-button-secondary {
+        @apply bg-transparent;
+    }
+
+    /* Optional icon after the button text */
+    .hero-button-icon {
+        @apply size-5 shrink-0 transition-transform duration-200;
+    }
+
+    /* Arrows nudge in their direction on hover */
+    .hero-button:hover .hero-icon-nudge-right {
+        @apply motion-safe:translate-x-0.75;
+    }
+
+    .hero-button:hover .hero-icon-nudge-up-right {
+        @apply motion-safe:translate-x-0.5 motion-safe:-translate-y-0.5;
+    }
+
+    /* Text animations: the H2 and buttons start slightly after the H1. */
+
+    .hero-animate-from-bottom .hero-badge,
+    .hero-animate-from-bottom h1,
+    .hero-animate-from-bottom h2,
+    .hero-animate-from-bottom .hero-buttons {
+        animation: hero-from-bottom 0.8s ease-out both;
+    }
+
+    .hero-animate-from-left .hero-badge,
+    .hero-animate-from-left h1,
+    .hero-animate-from-left h2,
+    .hero-animate-from-left .hero-buttons {
+        animation: hero-from-left 0.8s ease-out both;
+    }
+
+    .hero-animate-from-right .hero-badge,
+    .hero-animate-from-right h1,
+    .hero-animate-from-right h2,
+    .hero-animate-from-right .hero-buttons {
+        animation: hero-from-right 0.8s ease-out both;
+    }
+
+    .hero-animate-fade .hero-badge,
+    .hero-animate-fade h1,
+    .hero-animate-fade h2,
+    .hero-animate-fade .hero-buttons {
+        animation: hero-fade 1s ease-out both;
+    }
+
+    .hero-animate-scale .hero-badge,
+    .hero-animate-scale h1,
+    .hero-animate-scale h2,
+    .hero-animate-scale .hero-buttons {
+        animation: hero-scale 0.8s ease-out both;
+    }
+
+    .hero[class*="hero-animate-"] h2 {
+        animation-delay: 0.15s;
+    }
+
+    .hero[class*="hero-animate-"] .hero-buttons {
+        animation-delay: 0.3s;
+    }
+
+    /* Stop sideways slides causing a horizontal scrollbar */
+    .hero-animate-from-left,
+    .hero-animate-from-right {
+        overflow-x: clip;
+    }
+
+    /* Respect visitors who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .hero .hero-badge,
+        .hero h1,
+        .hero h2,
+        .hero .hero-buttons {
+            animation: none !important;
+        }
+    }
+
+}
+
+@keyframes hero-from-bottom {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-from-left {
+    from { opacity: 0; transform: translateX(-2rem); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-from-right {
+    from { opacity: 0; transform: translateX(2rem); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes hero-scale {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: none; }
+}
+header h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+
+header h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+    </style>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">	
+
+
+</head>
+
+
+<body>
+
+    <!-- PASTE the hero block HTML under here -->
+
+<!-- Hero (split) -->
+<header class="hero hero-min-height bg-slate-50">
+    <div class="hero-split-grid">
+
+        <div class="hero-content">
+            <h1 class="font-bold text-slate-900 tracking-[0.015em]">Putting the tricks into <span class="text-lime-500">web analytics</span>
+    </h1>
+            <h2 class="text-slate-700 tracking-[-0.025em]">Snazzy Analytics helps you boost your business impact. Supports all modern JavaScript frameworks, including React, Vue, and Svelte.
+    </h2>
+            <div class="hero-buttons">
+                <a href="#" class="hero-button rounded-full bg-lime-500 text-white hover:bg-lime-400">
+                    Try it for free
+                    <svg class="hero-button-icon hero-icon-nudge-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-split-media">
+            <img class="hero-split-image" src="assets/img/analytics.png" alt="Placeholder image" width="1200" height="900" fetchpriority="high">
+        </div>
+
+    </div>
+</header>
+
+
+
+    <!-- =============== Do not remove anything below this line ================= -->
+    <main>
+   		
+		<section class="w-full px-6 py-16 md:px-12 md:py-24 text-center">
+				<p class="text-xl"><a href="index-1.html" class="text-blue-800 underline underline-offset-6">Hero Block 1</a> | 
+				Hero Block 2 | 
+				<a href="index-3.html" class="text-blue-800 underline underline-offset-6">Hero Block 3</a> | 
+				<a href="index-4.html" class="text-blue-800 underline underline-offset-6">Hero Block 4</a> | 
+				<a href="index-5.html" class="text-blue-800 underline underline-offset-6">Hero Block 5</a></p>
+		</section>
+
+    </main>
+
+
+</body>
+</html>
