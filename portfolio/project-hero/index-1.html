@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakeen Khan | Portfolio | Sample Hero Block Layout 1</title>
+    <meta name="description" content="Gallery of hero block layouts.">
+
+    <!-- Preload the hero image so it appears as soon as possible -->
+    <link rel="preload" as="image" href="assets\img\music.jpg">
+
+      <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+
+        /* Paste CSS styles here */
+/* ===== Hero ===== */
+
+@layer components {
+
+    /* Layers, bottom to top:
+       1. image or poster   2. video   3. tinted overlay   4. headings */
+
+    .hero {
+        @apply relative isolate flex w-full items-center justify-center overflow-hidden px-6 py-16 md:px-12 md:py-20;
+    }
+
+    .hero-content {
+        @apply relative z-30 w-full max-w-5xl;
+    }
+
+    .hero-centre {
+        text-align: center;
+    }
+
+    .hero-centre .hero-content {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-min-height {
+        @apply min-h-[480px] md:min-h-[85vh];
+    }
+
+    .hero h1 {
+        @apply font-sans text-4xl font-normal leading-tight tracking-tight text-shadow-lg/30 md:text-6xl;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    .hero h2 {
+        @apply mt-6 font-sans text-lg font-normal leading-relaxed text-shadow-lg/30 md:text-2xl;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    /* Image background */
+    .hero-image {
+        @apply absolute inset-0 z-0 bg-cover bg-center bg-no-repeat;
+        background-image: url("assets/img/duotone.jpg");
+    }
+
+    /* Video background: the poster shows until the video plays */
+    .hero-poster {
+        @apply absolute inset-0 z-0 bg-cover bg-center bg-no-repeat;
+        background-image: url("https://lunevedy.com/v2/assets/videos/hero-poster.jpg");
+    }
+
+    .hero-video {
+        @apply pointer-events-none absolute inset-0 z-10 h-full w-full object-cover object-center opacity-0 transition-opacity duration-200 motion-reduce:transition-none;
+    }
+
+    .hero-video.is-playing {
+        @apply opacity-100;
+    }
+
+    /* Tinted overlay */
+    .hero-overlay {
+        @apply pointer-events-none absolute inset-0 z-20;
+    }
+
+    /* Badge: a short label above the H1. Its shape and colours
+       are classes in the HTML. */
+    .hero-badge {
+        @apply mb-6 inline-block px-3 py-1.5 text-sm font-normal;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    /* Buttons: links styled as buttons */
+    .hero-buttons {
+        @apply mt-10 flex flex-wrap gap-4 md:gap-x-6;
+    }
+
+    .hero-centre .hero-buttons {
+        @apply justify-center;
+    }
+
+    .hero-button {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-transparent px-7 py-3 text-base font-semibold no-underline transition-colors duration-200 focus-visible:outline-offset-4;
+    }
+
+    .hero-button-secondary {
+        @apply bg-transparent;
+    }
+
+    /* Optional icon after the button text */
+    .hero-button-icon {
+        @apply size-5 shrink-0 transition-transform duration-200;
+    }
+
+    /* Arrows nudge in their direction on hover */
+    .hero-button:hover .hero-icon-nudge-right {
+        @apply motion-safe:translate-x-0.75;
+    }
+
+    .hero-button:hover .hero-icon-nudge-up-right {
+        @apply motion-safe:translate-x-0.5 motion-safe:-translate-y-0.5;
+    }
+
+    /* Text animations: the H2 and buttons start slightly after the H1. */
+
+    .hero-animate-from-bottom .hero-badge,
+    .hero-animate-from-bottom h1,
+    .hero-animate-from-bottom h2,
+    .hero-animate-from-bottom .hero-buttons {
+        animation: hero-from-bottom 0.8s ease-out both;
+    }
+
+    .hero-animate-from-left .hero-badge,
+    .hero-animate-from-left h1,
+    .hero-animate-from-left h2,
+    .hero-animate-from-left .hero-buttons {
+        animation: hero-from-left 0.8s ease-out both;
+    }
+
+    .hero-animate-from-right .hero-badge,
+    .hero-animate-from-right h1,
+    .hero-animate-from-right h2,
+    .hero-animate-from-right .hero-buttons {
+        animation: hero-from-right 0.8s ease-out both;
+    }
+
+    .hero-animate-fade .hero-badge,
+    .hero-animate-fade h1,
+    .hero-animate-fade h2,
+    .hero-animate-fade .hero-buttons {
+        animation: hero-fade 1s ease-out both;
+    }
+
+    .hero-animate-scale .hero-badge,
+    .hero-animate-scale h1,
+    .hero-animate-scale h2,
+    .hero-animate-scale .hero-buttons {
+        animation: hero-scale 0.8s ease-out both;
+    }
+
+    .hero[class*="hero-animate-"] h2 {
+        animation-delay: 0.15s;
+    }
+
+    .hero[class*="hero-animate-"] .hero-buttons {
+        animation-delay: 0.3s;
+    }
+
+    /* Respect visitors who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .hero .hero-badge,
+        .hero h1,
+        .hero h2,
+        .hero .hero-buttons {
+            animation: none !important;
+        }
+    }
+
+}
+
+@keyframes hero-from-bottom {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-from-left {
+    from { opacity: 0; transform: translateX(-2rem); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-from-right {
+    from { opacity: 0; transform: translateX(2rem); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes hero-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes hero-scale {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: none; }
+}
+
+header h1, header h2 { 
+    font-family: 'Abril Fatface', serif; 
+    letter-spacing: 1px;
+}
+    </style>
+
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+    <!-- PASTE the hero block HTML under here -->
+<header class="hero">
+    <div class="hero-image" aria-hidden="true"></div>
+    <div class="hero-overlay bg-black opacity-40" aria-hidden="true"></div>
+    <div class="hero-content">
+        <h1 class="font-bold text-white tracking-[-0.050em]">Snazzy Headphones</h1>
+        <h2 class="text-white tracking-[-0.025em]">Enjoy Tunes While you develop software.</h2>
+        <div class="hero-buttons">
+            <a href="#" class="hero-button rounded-lg bg-white text-slate-900 hover:bg-slate-200">
+                Order now
+                <svg class="hero-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg>
+            </a>
+            <a href="#" class="hero-button hero-button-secondary rounded-lg border-white text-white hover:border-slate-200 hover:text-slate-200">
+                Learn more
+                <svg class="hero-button-icon hero-icon-nudge-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+
+
+    <!-- =============== Do not remove anything below this line ================= -->
+    <main>
+   		
+		<section class="w-full px-6 py-12 md:px-12 md:py-12 text-center">
+				<p class="text-xl">Hero Block 1 | 
+				<a href="index-2.html" class="text-blue-800 underline underline-offset-6">Hero Block 2</a> | 
+				<a href="index-3.html" class="text-blue-800 underline underline-offset-6">Hero Block 3</a> | 
+				<a href="index-4.html" class="text-blue-800 underline underline-offset-6">Hero Block 4</a> | 
+				<a href="index-5.html" class="text-blue-800 underline underline-offset-6">Hero Block 5</a></p>
+		</section>
+
+    </main>
+
+
+</body>
+</html>
